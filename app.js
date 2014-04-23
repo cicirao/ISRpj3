@@ -84,6 +84,33 @@ start = function() {
 				})
 			};
 		})
+		PSD.gameSchedule.on("touchleave", function() {
+			var x = PSD.games.x;
+			disappearj();
+
+			if (x > -3840 && x < 0) {
+				PSD.games.animate({
+					properties: {x:x-640},
+					curve:"ease-in",
+					time:400
+				});
+				PSD.bar.x += 38;
+				showtime(PSD.bar.x);
+
+			} else if (x <= -3840) {
+				PSD.games.x -= 100
+				PSD.games.animate({
+					properties: {x:-3840},
+					curve:"spring(1200,6,500)"
+				})
+			} else if (x >= 0) {
+				PSD.games.x -= 100
+				PSD.games.animate({
+					properties: {x:0},
+					curve:"spring(1200,6,500)"
+				})
+			};
+		})
 	})
 
 }
