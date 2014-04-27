@@ -25,7 +25,7 @@ start = function() {
 
 	PSD.j17.animate({
 		properties: {opacity:1},
-		time: 100
+		time: 200
 	})
 
 	PSD.gameSchedule.animate({
