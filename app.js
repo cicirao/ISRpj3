@@ -23,6 +23,15 @@ start = function() {
 		time: 100
 	})
 
+	utils.delay(200, function() {
+		oldX = PSD.bar.x
+		PSD.bar.x -= 100
+		PSD.bar.animate({
+			properties: {x:oldX},
+			curve: "spring(400,6,600)"
+		})
+	})
+	
 	PSD.j17.animate({
 		properties: {opacity:1},
 		time: 200
